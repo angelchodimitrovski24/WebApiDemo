@@ -19,6 +19,16 @@ namespace DemoApi.Controllers
             people.Add(new Person { FirstName = "Hristina", LastName = "Dimitrovska", Id = 3 });
         }
 
+        public List<string> GetFirstName()
+        {
+            List<string> output = new List<string>();
+
+            foreach (var p in people) { 
+                output.Add(p.FirstName);
+            }
+            return output;
+        }
+
         // GET: api/People
         public List<Person> Get()
         {
@@ -41,6 +51,7 @@ namespace DemoApi.Controllers
         // DELETE: api/People/5
         public void Delete(int id)
         {
+            people.Remove();
         }
     }
 }
