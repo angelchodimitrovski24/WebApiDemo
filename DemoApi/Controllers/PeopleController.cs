@@ -18,7 +18,8 @@ namespace DemoApi.Controllers
             people.Add(new Person { FirstName = "Angelcho", LastName = "Dimitrovski", Id = 2 });
             people.Add(new Person { FirstName = "Hristina", LastName = "Dimitrovska", Id = 3 });
         }
-
+        [Route("api/People/GetFirstNames")]
+        [HttpGet]
         public List<string> GetFirstName()
         {
             List<string> output = new List<string>();
@@ -51,7 +52,7 @@ namespace DemoApi.Controllers
         // DELETE: api/People/5
         public void Delete(int id)
         {
-            people.Remove();
+            
         }
     }
 }
